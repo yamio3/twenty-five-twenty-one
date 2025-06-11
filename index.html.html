@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>25 21 - Amor en tiempos de juventud</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap");
+
+        body {
+            font-family: "Montserrat", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+            background-color: #fff9f9;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            font-family: "Playfair Display", serif;
+            font-weight: 700;
+            color: #d23669;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 40px;
+            border-bottom: 2px solid #fad0c4;
+            padding-bottom: 10px;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: -40px auto 0;
+            padding: 30px;
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 15px auto;
+            display: block;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        img:hover {
+            transform: scale(1.03);
+        }
+
+        footer {
+            background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+            color: white;
+            padding: 25px;
+            margin-top: 40px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        li {
+            padding: 10px 0;
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 5px;
+        }
+
+        li:before {
+            content: "❤";
+            position: absolute;
+            left: 5px;
+            color: #ff6b81;
+            font-size: 1.2em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            background-color: #fffafa;
+        }
+
+        tr {
+            transition: background-color 0.3s ease;
+        }
+
+        td {
+            padding: 18px;
+            vertical-align: middle;
+            border-bottom: 1px solid #FFB6C1;
+        }
+
+        tr:nth-child(even) {
+            background-color:#ffecef;
+        }
+
+        tr:nth-child(odd) {
+            background-color:#fffafa;
+        }
+
+        tr:hover {
+            background-color:#FFC0CB;
+        }
+
+        iframe {
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            border: none;
+            max-width: 100%;
+            display: block;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.05em;
+            line-height: 1.7;
+        }
+
+        a {
+            color: #d23669;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        a:hover {
+            color: #ff4757;
+            text-decoration: underline;
+        }
+
+        /* Efectos especiales */
+        .romantic-underline {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 3px;
+        }
+
+        .romantic-underline:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .romantic-underline:hover:after {
+            transform: scaleX(1);
+        }
+        
+        .nav-links {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .nav-links a {
+            margin: 0 15px;
+            padding: 8px 15px;
+            background-color: #ffecef;
+            border-radius: 20px;
+            display: inline-block;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 25px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        marquee {
+            position: fixed;
+            z-index: 100;
+            pointer-events: none;
+            font-size: 2.5rem;
+            color: #ff6b81;
+            opacity: 0.7;
+        }
+        
+        blockquote {
+            margin: 25px 0;
+            padding: 15px;
+            background-color: #fff5f7;
+            border-left: 4px solid #ff9a9e;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .character-table img {
+            max-width: 200px;
+            max-height: 250px;
+            object-fit: cover;
+        }
+        
+        .episode-list {
+            column-count: 2;
+            column-gap: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 20px;
+            }
+            
+            .episode-list {
+                column-count: 1;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .character-table img {
+                max-width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <marquee direction="up" behavior="scroll" scrollamount="2">♡ ♡ ♡</marquee>
+    
+    <div class="nav-links">
+        <a href="#PRINCIPIO" class="romantic-underline">Inicio</a>
+        <a href="#SINOPSIS" class="romantic-underline">Sinopsis</a>
+        <a href="#PERSONAJES" class="romantic-underline">Personajes</a>
+        <a href="#EPISODIOS" class="romantic-underline">Episodios</a>
+        <a href="#SOUNDTRACK " class="romantic-underline">Soundtrack (ost)</a>
+        <a href="#FRASES" class="romantic-underline">Frases</a>
+        <a href="#MOMENTOS DESTACADOS" class="romantic-underline">Momentos Destacados</a>
+        <a href="#ENSEÑANZAS" class="romantic-underline">Enseñanzas</a>
+        <a href="#OPINION" class="romantic-underline">Opinion</a>
+        <a href="#FINAL" class="romantic-underline">Final</a>
+    </div>
+
+    <header id="PRINCIPIO">
+        <h1>K-Drama Twenty-Five Twenty-One (25 21)</h1>
+        <p>Una historia de amor y crecimiento en tiempos difíciles.</p>
+        <img src="imagenes/NB.webp" alt="Poster de Twenty-Five Twenty-One" />
+    </header>
+
+    <div class="container">
+        <section id="TEMAS">
+            <h2>Temas principales</h2>
+            <ul>
+                <li>Juventud y madurez</li>
+                <li>Amor que crece pero también cambia</li>
+                <li>Sueños vs. realidad</li>
+                <li>Amistades verdaderas</li>
+                <li>El impacto de la historia y la crisis económica en la vida de los jóvenes</li>
+            </ul>
+        </section>
+
+        <section id="SINOPSIS">
+            <h2>SINOPSIS</h2>
+            <p>
+                "Twenty-Five, Twenty-One" cuenta una historia de amor entre Na Hee Do y Baek Yi Jin.
+            </p>
+            <p>
+                Na Hee Do es miembro del equipo de esgrima de su escuela secundaria.
+                Debido a la crisis financiera de Corea del Sur, el equipo de esgrima
+                de la escuela secundaria se disuelve. Superando todas las
+                dificultades, se convierte en miembro de la selección nacional de
+                esgrima con sable.
+            </p>
+            <p>
+                La crisis financiera de Corea del Sur también provoca la quiebra del
+                negocio del padre de Baek Yi Jin. Esto lleva a un cambio de vida para
+                Baek Yi Jin, de vivir la vida de una persona rica a una persona pobre.
+                Mientras estudia, trabaja en trabajos de medio tiempo como reparto de
+                periódicos. Más tarde, se convierte en reportero deportivo de una
+                cadena de televisión.
+            </p>
+        </section>
+
+        <section id="TRAILER">
+            <h2>TRAILER</h2>
+            <div class="video-container">
+                <iframe
+                    src="https://www.youtube.com/embed/V9NLRnpaxeo?si=c4O7aSZ0CPFlV5o0"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                ></iframe>
+            </div>
+        </section>
+
+        <section id="PERSONAJES">
+            <h2>PERSONAJES</h2>
+            <table class="character-table">
+                <tr>
+                    <td>Na Hee-Do (Kim Tae-Ri): esgrimista apasionada y determinada</td>
+                    <td>
+                        <img src="imagenes/taeri.jpg" alt="Kim Tae-Ri como Na Hee-Do" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Baek Yi-Jin (Nam Joo-Hyuk): ex heredero de un conglomerado, ahora reportero
+                    </td>
+                    <td>
+                        <img src="imagenes/hyunk.jpg" alt="Nam Joo-Hyuk como Baek Yi-Jin" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ko Yu-Rim (Bona): rival y compañera de Hee-Do</td>
+                    <td><img src="imagenes/yurim.jpg" alt="Bona como Ko Yu-Rim" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        Ji Seung-Wan (Lee Joo-Myung): estudiante brillante con ideales firmes
+                    </td>
+                    <td>
+                        <img src="imagenes/lee young-myung.jpg" alt="Lee Joo-Myung como Ji Seung-Wan" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Moon Ji-Woong (Choi Hyun-Wook): chico popular y amante de la moda
+                    </td>
+                    <td>
+                        <img src="imagenes/choi.jpg" alt="Choi Hyun-Wook como Moon Ji-Woong" />
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="EPISODIOS">
+            <h2>EPISODIOS</h2>
+            <ul class="episode-list">
+                <li>
+                    <strong>Episodio 1</strong> - Na Hee-Do, una joven esgrimista con un
+                    carácter impulsivo, sueña con llegar a ser profesional. Baek Yi-Jin,
+                    cuyo padre fue arruinado por la crisis financiera asiática de 1998,
+                    lucha por sobrevivir. Se conocen en circunstancias inesperadas.
+                </li>
+
+                <li>
+                    <strong>Episodio 2</strong> - Hee-Do intenta ingresar al equipo de
+                    esgrima de otra escuela tras la disolución del suyo. Yi-Jin empieza a
+                    reconstruir su vida mientras forma un vínculo creciente con Hee-Do.
+                </li>
+
+                <li>
+                    <strong>Episodio 3</strong> - Hee-Do logra entrar al nuevo equipo,
+                    pero enfrenta tensiones con Ko Yu-Rim, la campeona nacional. Yi-Jin
+                    empieza a trabajar como reportero novato.
+                </li>
+
+                <li>
+                    <strong>Episodio 4</strong> - La rivalidad entre Hee-Do y Yu-Rim se
+                    intensifica. Yi-Jin comienza a ver a Hee-Do bajo una nueva luz. Se
+                    revelan más capas emocionales entre los personajes.
+                </li>
+
+                <li>
+                    <strong>Episodio 5</strong> - Hee-Do y Yu-Rim se enfrentan en un
+                    torneo clave. Se desarrolla su relación online secreta, sin saber que
+                    son rivales en la vida real. Yi-Jin comienza a tomar más
+                    responsabilidades en el trabajo.
+                </li>
+
+                <li>
+                    <strong>Episodio 6</strong> - Una pelea entre Hee-Do y Yu-Rim
+                    desencadena una transformación emocional. Yi-Jin y Hee-Do comparten un
+                    momento muy significativo.
+                </li>
+
+                <li>
+                    <strong>Episodio 7</strong> - Se explora la vida personal de Yi-Jin.
+                    La tensión entre él y Hee-Do empieza a tener matices románticos.
+                    Aparecen más detalles sobre los otros personajes secundarios.
+                </li>
+
+                <li>
+                    <strong>Episodio 8</strong> - Una revelación cambia la dinámica entre
+                    Yu-Rim y Hee-Do. La conexión de Yi-Jin y Hee-Do se hace más profunda y
+                    sincera.
+                </li>
+
+                <li>
+                    <strong>Episodio 9</strong> - Hee-Do enfrenta una crisis de confianza
+                    tras un mal desempeño. Yi-Jin la apoya emocionalmente. Empieza a
+                    surgir una relación especial entre Moon Ji-Woong y Yu-Rim.
+                </li>
+
+                <li>
+                    <strong>Episodio 10</strong> - Hee-Do y Yu-Rim por fin enfrentan su
+                    historia y su enemistad se transforma. La amistad renace. Los
+                    sentimientos entre Yi-Jin y Hee-Do se vuelven más evidentes.
+                </li>
+
+                <li>
+                    <strong>Episodio 11</strong> - Yi-Jin tiene dificultades en su trabajo
+                    debido a la ética periodística. Hee-Do empieza a tener dudas sobre su
+                    camino. La presión de ser un atleta comienza a pesar.
+                </li>
+
+                <li>
+                    <strong>Episodio 12</strong> - La distancia y los caminos diferentes
+                    entre Yi-Jin y Hee-Do comienzan a notarse. Los personajes enfrentan
+                    nuevas etapas de madurez.
+                </li>
+
+                <li>
+                    <strong>Episodio 13</strong> - Se exploran más las historias
+                    secundarias (como Ji-Seung Wan y su rebeldía). La tensión emocional
+                    entre Yi-Jin y Hee-Do llega a un punto crucial.
+                </li>
+
+                <li>
+                    <strong>Episodio 14</strong> - Yi-Jin se enfrenta a un conflicto ético
+                    importante en su carrera. Hee-Do toma decisiones sobre su futuro como
+                    atleta.
+                </li>
+
+                <li>
+                    <strong>Episodio 15</strong> - Una fuerte conversación entre Yi-Jin y
+                    Hee-Do define lo que sienten, pero también lo que deben dejar ir. La
+                    adultez y las responsabilidades pesan más.
+                </li>
+
+                <li>
+                    <strong>Episodio 16</strong> - El episodio muestra cómo los personajes
+                    han cambiado a lo largo de los años. El cierre es nostálgico,
+                    emocional y deja una reflexión sobre el amor joven, los sueños y el
+                    paso del tiempo.
+                </li>
+            </ul>
+        </section>
+
+        <section id="SOUNDTRACK">
+            <h2>SOUNDTRACK (OST)</h2>
+
+            <div class="video-container">
+                <iframe
+                    src="https://www.youtube.com/embed/RNj-GhxPM0g?si=Gpf59AFlWuNq2M_H"
+                    title="YouTube video player"
+                    allowfullscreen
+                ></iframe>
+            </div>
+
+            <div class="video-container">
+                <iframe
+                 width="560"
+                 height="315"
+                    src="https://www.youtube.com/embed/KTFWCLeqn04?si=Kx9UV1-xLS3daZut"
+                    title="YouTube video player"
+                    allowfullscreen
+                ></iframe>
+            </div>
+
+            <div class="video-container">
+                <iframe
+                    src="https://www.youtube.com/embed/avSs4odflYg?si=NZByRthsrUhCMCAl"
+                    title="YouTube video player"
+                    allowfullscreen
+                ></iframe>
+            </div>
+
+            <div class="video-container">
+                <iframe
+                    src="https://www.youtube.com/embed/vbMJf5NIxtU?si=9cvqBJ-G54LLsJES"
+                    title="YouTube video player"
+                    allowfullscreen
+                ></iframe>
+            </div>
+        </section>
+
+        <section id="FRASES">
+            <h2>FRASES </h2>
+            <blockquote>
+                "Nada dura para siempre todo es muy efímero y los momentos pasan y eso no es necesariamente malo" (Na Hee Do)
+            </blockquote>
+            <blockquote>
+                "Y se que es tarde, pero felicidades por tu boda" (Baek Yi-jin)
+            </blockquote>
+            <blockquote>
+                "Este amor ya no me sostiene." (Na Hee Do)
+            </blockquote>
+            <blockquote>
+                "Nos distanciamos… siento que tu mundo y el mío no dejan alejarse. Tu vas muy adelante y yo siento que me quedo atrás." (Na Hee Do)
+            </blockquote>
+            <blockquote>
+                "Aqui fue donde te conocí... Y aquí es donde terminamos" (Baek Yi-jin)
+            </blockquote>
+            <blockquote>
+                "Solo nos amamos en los momentos buenos, y en los malos somos una carga".(Baek Yi-jin)
+            </blockquote>
+            <blockquote>
+               "¿Alguna vez me amaste de verdad?" (Na Hee Do)
+            <br>
+            "Que no te ame de la forma que quieres no significa qe no te ame".(Baek Yi-jin)
+            <br>
+            "Que me ames no significa que me sienta amada". (Na Hee Do)
+            </blockquote>
+
+        </section>
+
+        <section id="TIKTOKS">
+            <h2>MOMENTOS DESTACADOS</h2>
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@myquietlifeee/video/7445025549996625154" data-video-id="7445025549996625154" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@myquietlifeee" href="https://www.tiktok.com/@myquietlifeee?refer=embed">@myquietlifeee</a> love <a title="twentyfivetwentyone" target="_blank" href="https://www.tiktok.com/tag/twentyfivetwentyone?refer=embed">#twentyfivetwentyone</a> <a title="twentyfivetwentyonekdrama" target="_blank" href="https://www.tiktok.com/tag/twentyfivetwentyonekdrama?refer=embed">#twentyfivetwentyonekdrama</a> <a title="twentyfivetwentyoneedit" target="_blank" href="https://www.tiktok.com/tag/twentyfivetwentyoneedit?refer=embed">#twentyfivetwentyoneedit</a> <a title="2521" target="_blank" href="https://www.tiktok.com/tag/2521?refer=embed">#2521</a> <a title="2521kdrama" target="_blank" href="https://www.tiktok.com/tag/2521kdrama?refer=embed">#2521kdrama</a> <a title="kdrama" target="_blank" href="https://www.tiktok.com/tag/kdrama?refer=embed">#kdrama</a> <a title="fyp" target="_blank" href="https://www.tiktok.com/tag/fyp?refer=embed">#fyp</a> <a title="fy" target="_blank" href="https://www.tiktok.com/tag/fy?refer=embed">#fy</a> <a target="_blank" title="♬ M. - Anıl Emre Daldal" href="https://www.tiktok.com/music/M-6896901635545499650?refer=embed">♬ M. - Anıl Emre Daldal</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+<br>   
+            
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@0812filmz/video/7401494449580166406" data-video-id="7401494449580166406" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@0812filmz" href="https://www.tiktok.com/@0812filmz?refer=embed">@0812filmz</a> <a title="2521" target="_blank" href="https://www.tiktok.com/tag/2521?refer=embed">#2521</a> <a target="_blank" title="♬ suara asli  - wind" href="https://www.tiktok.com/music/suara-asli-wind-7401494463290002182?refer=embed">♬ suara asli  - wind</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+ <br>
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@dawnhaes/video/7257866079190469894" data-video-id="7257866079190469894" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@dawnhaes" href="https://www.tiktok.com/@dawnhaes?refer=embed">@dawnhaes</a> editing every episode of <a title="twentyfivetwentyone" target="_blank" href="https://www.tiktok.com/tag/twentyfivetwentyone?refer=embed">#twentyfivetwentyone</a> <a target="_blank" title="♬ original sound - ❤️‍🩹 - dawnhaes" href="https://www.tiktok.com/music/original-sound-❤️‍🩹-7257866091070917381?refer=embed">♬ original sound - ❤️‍🩹 - dawnhaes</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+<br>
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@taelyio_/video/7485508146555931909" data-video-id="7485508146555931909" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@taelyio_" href="https://www.tiktok.com/@taelyio_?refer=embed">@taelyio_</a> t sigo pensando.  <a title="twentyfivetwentyone" target="_blank" href="https://www.tiktok.com/tag/twentyfivetwentyone?refer=embed">#twentyfivetwentyone</a>  <a title="veinticincoveintiuno" target="_blank" href="https://www.tiktok.com/tag/veinticincoveintiuno?refer=embed">#veinticincoveintiuno</a>  <a title="kdrama" target="_blank" href="https://www.tiktok.com/tag/kdrama?refer=embed">#kdrama</a> <a title="selenagomez" target="_blank" href="https://www.tiktok.com/tag/selenagomez?refer=embed">#selenagomez</a>  <a title="themarias" target="_blank" href="https://www.tiktok.com/tag/themarias?refer=embed">#themarias</a> <a title="ojostristes" target="_blank" href="https://www.tiktok.com/tag/ojostristes?refer=embed">#ojostristes</a>  <a title="crzgf" target="_blank" href="https://www.tiktok.com/tag/crzgf?refer=embed">#crzgf</a> <a title="foryoupage" target="_blank" href="https://www.tiktok.com/tag/foryoupage?refer=embed">#foryoupage</a> <a title="core" target="_blank" href="https://www.tiktok.com/tag/core?refer=embed">#core</a>  <a title="naheedo" target="_blank" href="https://www.tiktok.com/tag/naheedo?refer=embed">#naheedo</a> <a title="baekyijin" target="_blank" href="https://www.tiktok.com/tag/baekyijin?refer=embed">#baekyijin</a>  <a title="crzgf" target="_blank" href="https://www.tiktok.com/tag/crzgf?refer=embed">#crzgf</a> <a title="xzyabc" target="_blank" href="https://www.tiktok.com/tag/xzyabc?refer=embed">#xzyabc</a> <a title="fyp" target="_blank" href="https://www.tiktok.com/tag/fyp?refer=embed">#fyp</a> <a target="_blank" title="♬ sonido original - cesaaaaar" href="https://www.tiktok.com/music/sonido-original-7484375087678819127?refer=embed">♬ sonido original - cesaaaaar</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+
+<br>
+<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@daliflm/video/7199444974260276485" data-video-id="7199444974260276485" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@daliflm" href="https://www.tiktok.com/@daliflm?refer=embed">@daliflm</a> <a title="2521" target="_blank" href="https://www.tiktok.com/tag/2521?refer=embed">#2521</a> <a title="twentyfivetwentyone" target="_blank" href="https://www.tiktok.com/tag/twentyfivetwentyone?refer=embed">#twentyfivetwentyone</a> <a title="kdrama" target="_blank" href="https://www.tiktok.com/tag/kdrama?refer=embed">#kdrama</a> <a title="veinticincoveintiuno" target="_blank" href="https://www.tiktok.com/tag/veinticincoveintiuno?refer=embed">#veinticincoveintiuno</a> <a title="kimtaeri" target="_blank" href="https://www.tiktok.com/tag/kimtaeri?refer=embed">#kimtaeri</a> <a title="namjoohyuk" target="_blank" href="https://www.tiktok.com/tag/namjoohyuk?refer=embed">#namjoohyuk</a> <a title="kdramafyp" target="_blank" href="https://www.tiktok.com/tag/kdramafyp?refer=embed">#kdramafyp</a> <a target="_blank" title="♬ Agape - Nicholas Britell" href="https://www.tiktok.com/music/Agape-6913654857325643777?refer=embed">♬ Agape - Nicholas Britell</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+<br>
+
+<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@.melixdafnne/video/7496985650206362887" data-video-id="7496985650206362887" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@.melixdafnne" href="https://www.tiktok.com/@.melixdafnne?refer=embed">@.melixdafnne</a> 2521 siempre va a doler😔 <a title="twentyfivetwentyone" target="_blank" href="https://www.tiktok.com/tag/twentyfivetwentyone?refer=embed">#twentyfivetwentyone</a> <a title="2521kdrama" target="_blank" href="https://www.tiktok.com/tag/2521kdrama?refer=embed">#2521kdrama</a> <a title="veinticincoveintiuno" target="_blank" href="https://www.tiktok.com/tag/veinticincoveintiuno?refer=embed">#veinticincoveintiuno</a> <a title="naheedo" target="_blank" href="https://www.tiktok.com/tag/naheedo?refer=embed">#naheedo</a> <a title="baekyijin" target="_blank" href="https://www.tiktok.com/tag/baekyijin?refer=embed">#baekyijin</a> <a title="naheedobaekyijin" target="_blank" href="https://www.tiktok.com/tag/naheedobaekyijin?refer=embed">#naheedobaekyijin</a> <a title="paratiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii" target="_blank" href="https://www.tiktok.com/tag/paratiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii?refer=embed">#paratiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</a> <a title="ilovekdramas" target="_blank" href="https://www.tiktok.com/tag/ilovekdramas?refer=embed">#ilovekdramas</a> <a title="kdramas" target="_blank" href="https://www.tiktok.com/tag/kdramas?refer=embed">#kdramas</a> <a target="_blank" title="♬ COQUETA - Fuerza Regida &#38; Grupo Frontera" href="https://www.tiktok.com/music/COQUETA-7449924369173809168?refer=embed">♬ COQUETA - Fuerza Regida &#38; Grupo Frontera</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+</section>
+        <section id="ENSEÑANZAS">
+            <h2>ENSEÑANZAS</h2>
+            <ul>
+                <li>25 21 nos mostró lo rapido que pasa la vida y como al final todos nos convertimos en un recuerdo.</li>
+                <li>A veces, el amor no es suficiente para mantener unidos, y el adiós se convierte en la única opción que duele más que quedarse. </li>
+                <li>Nunca abandones tus sueños. </li>
+                <li>Los amigos son todo en este mundo. </li>
+                <li>La comunicación es la base de las relaciones. </li>
+            </section>
+
+        <section id="OPINION">
+            <h2>OPINIÓN</h2>
+            <p>
+                Twenty-Five Twenty-One es una hermosa representación del primer amor,
+                los sueños juveniles y las dolorosas transiciones a la adultez. La
+                química entre los protagonistas y la narrativa nostálgica hacen de este
+                drama una experiencia emotiva que resuena mucho después del último
+                episodio.
+            </p>
+        </section>
+
+        <section id="FUENTES">
+            <h2>FUENTES DE INFORMACIÓN</h2>
+            <ul>
+                <li><a href="https://drama.fandom.com/es/wiki/Twenty-Five,_Twenty-One">Fandom - Twenty-Five Twenty-One</a></li>
+                <li><a href="https://images.app.goo.gl/xQGHRHVrK4GxKyXj7">Imagen 1</a></li>
+                <li><a href="https://images.app.goo.gl/AaihtiY4Lzmt375r8">Imagen 2</a></li>
+                <li><a href="https://images.app.goo.gl/Q5ypt79aLoLpsGDs8">Imagen 3</a></li>
+                <li><a href="https://images.app.goo.gl/PUApWwzp2TeB1VXf7">Imagen 4</a></li>
+                <li><a href="https://images.app.goo.gl/Y3xb3g54eRLHcF1f6">Imagen 5</a></li>
+                <li><a href="https://images.app.goo.gl/VKnc3kk3rWkfrdpU8">Imagen 6</a></li>
+                <li><a href="https://pin.it/1bvpC6CQN">Imagen 7</a></li>
+                <li><a href="https://www.tiktok.com/@myquietlifeee/video/7445025549996625154">Video TikTok 1</a></li>
+                <li><a href="https://www.tiktok.com/@0812filmz/video/7401494449580166406">Video TikTok 2</a></li>
+                <li><a href="https://www.tiktok.com/@dawnhaes/video/7257866079190469894">Video TikTok 3</a></li>
+                 <li><a href="https://www.tiktok.com/@taelyio_/video/7485508146555931909?is_from_webapp=1&sender_device=pc">Video TikTok 4</a></li>
+                <li><a href="https://www.tiktok.com/@daliflm/video/7199444974260276485?is_from_webapp=1&sender_device=pc&web_id=7513592097837401606">Video TikTok 5</a></li>
+                <li><a href="https://www.tiktok.com/@.melixdafnne/video/7496985650206362887?is_from_webapp=1&sender_device=pc&web_id=7513592097837401606">Video TikTok 6</a></li>
+                <li><a href="https://www.netflix.com/mx/title/81517168">Ver episodios</a></li>
+            </ul>
+        </section>
+       <!--Este es un comentario-->
+       <center><p>Esta pagina es creada con el fin de aprobar mis materias y tome toda la informacion de las fuentes de informacion mostradas</p></center>
+    </div>
+
+    <footer id="FINAL">
+        <p>&copy; 2023 Yazmin Garcia Cano | TWENTY FIVE TWENTY ONE</p>
+        <p><a href="#PRINCIPIO" class="romantic-underline">Volver al principio</a></p>
+    </footer>
+</body>
+</html>
